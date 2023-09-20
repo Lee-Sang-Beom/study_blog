@@ -1,0 +1,45 @@
+.header_search_form_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+}
+
+.input_form_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 300px;
+  min-width: 100px;
+  width: auto;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.theme_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: auto;
+  height: 100%;
+  gap: 20px;
+  position: relative;
+}
+
+.login_box {
+  flex-basis: auto;
+
+  div {
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+
+    p {
+      margin: 4px 0 0 10px;
+      color: var(--main-hover-accent);
+      font-size: 18px;
+    }
+  }
+}
