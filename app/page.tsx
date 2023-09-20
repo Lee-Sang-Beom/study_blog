@@ -1,95 +1,69 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import {
+  Card,
+  CardBody,
+  CardContent,
+  CardImage,
+  CardTag,
+  CardTitle,
+} from "@/components/card/Card";
 
+const tags = [
+  { tagName: "react", tagId: 1 },
+  { tagName: "자바스크립트", tagId: 2 },
+  { tagName: "자바", tagId: 3 },
+  { tagName: "파이썬", tagId: 4 },
+  { tagName: "Golang", tagId: 5 },
+  { tagName: "Rust", tagId: 6 },
+  { tagName: "C#", tagId: 7 },
+];
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <div>
+      <h1>메인 페이지</h1>
+      <Card>
+        <CardImage />
+        <CardBody>
+          <CardTag>
+            <ul
+              style={{
+                display: "flex",
+                gap: "18px",
+              }}
+            >
+              {tags.map((tag: any) => (
+                <li
+                  key={tag.tagId}
+                  style={{
+                    color: "var(--mint, #00C7AF)",
+                    fontFamily: "Godo M",
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                  }}
+                >
+                  #{tag.tagName}
+                </li>
+              ))}
+            </ul>
+            <button>+ more</button>
+          </CardTag>
+          <CardTitle>안녕하세요 만나서 반갑니다.</CardTitle>
+          <CardContent style={{ width: "1040px" }}>
+            여기는 게시글 내용이 4줄 보여지는 영역입니다.여기는 게시글 내용이
+            4줄 보여지는 영역입니다.여기는 게시글 내용이 4줄 보여지는
+            영역입니다.여기는 게시글 내용이 4줄 보여지는 영역입니다.여기는
+            게시글 내용이 4줄 보여지는 영역입니다.여기는 게시글 내용이 4줄
+            보여지는 영역입니다.여기는 게시글 내용이 4줄 보여지는
+            영역입니다.여기는 게시글 내용이 4줄 보여지는 영역입니다.여기는
+            게시글 내용이 4줄 보여지는 영역입니다.여기는 게시글 내용이 4줄
+            보여지는 영역입니다.여기는 게시글 내용이 4줄 보여지는
+            영역입니다.여기는 게시글 내용이 4줄 보여지는 영역입니다.여기는
+            게시글 내용이 4줄 보여지는 영역입니다.여기는 게시글 내용이 4줄
+            보여지는 영역입니다.
+          </CardContent>
+        </CardBody>
+      </Card>
+    </div>
+  );
 }
