@@ -1,0 +1,31 @@
+.header_top {
+  box-sizing: border-box;
+  padding: 0 60px;
+  width: 100%;
+
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--main-line-contents-area-2);
+
+  .header_left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 160px;
+    min-width: 160px;
+  }
+  .header_center {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    flex-basis: 40%;
+    height: 100%;
+  }
+  .header_right {
+    flex-basis: 40%;
+    height: 100%;
+  }
+}

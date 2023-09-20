@@ -1,0 +1,22 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: 1.2;
+  font-weight: 500;
+  min-width: 2.5rem;
+  font-size: var(--fs-md);
+  background: transparent;
+  height: 100%;
+}
+
+.button:focus {
+  outline-color: #000000;
+  outline-width: 2px;
+}/*# sourceMappingURL=IconButton.module.css.map */

@@ -1,0 +1,58 @@
+.paging {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+.paging_prev {
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+    background: #C4CDD5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.paging_prev_icon {
+    width: 24px;
+    height: 24px;
+    color: #FFFFFF;
+}
+.paging_number_wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+.paging_number {
+    display: flex;
+    width: 38px;
+    height: 38px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #DFE3E8;
+    background: #FFFFFF;
+}
+.paging_number_text {
+    color: #040404;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.paging_number:hover p {
+    color: #4200FF;
+    text-decoration-line: underline;
+}
+.paging_number_active {
+    border: 2px solid #4200FF;
+}
+.paging_number_active p {
+    color: #4200FF;
+    font-weight: 700;
+}
+.paging_next_icon {
+    width: 24px;
+    height: 24px;
+    color: #C4CDD5;
+}

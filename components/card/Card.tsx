@@ -1,129 +1,112 @@
 "use client";
 
-import React from "react";
+import React, { forwardRef } from "react";
+import Style from "./Card.module.css";
+import { HiOutlinePlusSm } from "react-icons/hi";
 
-const Card = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    style={{
-      display: "flex",
-      width: "100%",
-      alignItems: "flex-start",
-      gap: "40px",
-    }}
-    {...props}
-  />
-));
+const Card = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => (
+    <div ref={ref} className={Style.card} {...props} />
+  )
+);
 Card.displayName = "Card";
 
-const CardBody = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "flex-start",
-      gap: "12px",
-      width: "100%",
-    }}
-    {...props}
-  />
-));
-CardBody.displayName = "CardBody";
-
-const CardImage = React.forwardRef<
+const CardImage = forwardRef<
   HTMLImageElement,
   React.HTMLAttributes<HTMLImageElement>
 >(({ className, ...props }, ref) => (
   <img
-    ref={ref}
     src={"https://picsum.photos/240/200"}
-    style={{
-      borderRadius: "10px",
-    }}
     alt={"강아지"}
+    width={240}
+    height={200}
+    className={Style.card_image}
+    ref={ref}
     {...props}
   />
 ));
 CardImage.displayName = "CardImage";
 
-const CardTag = React.forwardRef<
+const CardBody = forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={"cardTag"}
-    style={{
-      display: "flex",
-      justifyContent: "space-between",
-      width: "100%",
-    }}
-    {...props}
-  />
+  <div ref={ref} className={Style.card_body} {...props} />
+));
+CardBody.displayName = "CardBody";
+
+const CardBodyTop = forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div className={Style.card_body_top} ref={ref} {...props} />
+));
+CardBodyTop.displayName = "CardBodyTop";
+
+const CardTagWrap = forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={Style.card_tag_wrap} {...props} />
+));
+CardTagWrap.displayName = "CardTagWrap";
+
+const CardTag = forwardRef<
+  HTMLSpanElement,
+  React.HTMLAttributes<HTMLSpanElement>
+>(({ className, ...props }, ref) => (
+  <span ref={ref} className={Style.card_tag} {...props} />
 ));
 CardTag.displayName = "CardTag";
 
-const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
+const CardMoreButton = forwardRef<
+  HTMLButtonElement,
+  React.HTMLAttributes<HTMLButtonElement>
 >(({ className, ...props }, ref) => (
-  <p
-    ref={ref}
-    style={{
-      color: "#040404",
-      fontFamily: "Godo B",
-      fontSize: "32px",
-      fontStyle: "normal",
-      fontWeight: 400,
-      lineHeight: "normal",
-    }}
-    {...props}
-  />
+  <button ref={ref} className={Style.card_more_button} {...props}>
+    <HiOutlinePlusSm size={24} color={"white"} />
+    <span>More</span>
+  </button>
 ));
-CardTitle.displayName = "CardTitle";
+CardMoreButton.displayName = "CardMoreButton";
 
-const CardContent = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
+const CardContent = forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <p
-    ref={ref}
-    style={{
-      width: "100%",
-      color: "#555",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap",
-      fontFamily: "Pretendard",
-      fontSize: "20px",
-      fontStyle: "normal",
-      fontWeight: 400,
-      lineHeight: "32px" /* 32px */,
-    }}
-    {...props}
-  />
+  <div ref={ref} className={Style.card_content} {...props} />
 ));
 CardContent.displayName = "CardContent";
 
-export { Card, CardBody, CardImage, CardTag, CardTitle, CardContent };
-/*const Card = ({ children, ...props }: any) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        alignItems: "flex-start",
-        gap: "40px",
-      }}
-    >
-      {children}
-    </div>
-  );
+const CardTitle = forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <div className={Style.card_title_wrap}>
+    <p ref={ref} className={Style.card_title} {...props} />
+  </div>
+));
+CardTitle.displayName = "CardTitle";
+
+const CardText = forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <div className={Style.card_text_wrap}>
+    <p ref={ref} className={Style.card_text} {...props} />
+  </div>
+));
+CardText.displayName = "CardText";
+
+export {
+  Card,
+  CardImage,
+  CardBody,
+  CardBodyTop,
+  CardTagWrap,
+  CardTag,
+  CardMoreButton,
+  CardContent,
+  CardTitle,
+  CardText,
 };
-export default Card;*/
