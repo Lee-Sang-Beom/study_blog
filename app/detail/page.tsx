@@ -13,6 +13,7 @@ import {
   DetailBHeaderTitle,
 } from "@/components/detailB/Detail-B";
 import { Tag } from "@/components/tag/Tag";
+import React from "react";
 
 const DetailPage = () => {
   return (
