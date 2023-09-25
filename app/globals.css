@@ -96,4 +96,10 @@
 
 #blog_wrap {
   font-family: var(--font-godo);
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 말줄임 적용 */
 }/*# sourceMappingURL=globals.css.map */

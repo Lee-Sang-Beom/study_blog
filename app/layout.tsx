@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
 import localFont from "next/font/local";
+import Main from "@/components/Main/Main";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -62,7 +65,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${Godo.variable} ${pretendard.variable}`}>
         <div id={"blog_wrap"}>
-          <Providers>{children}</Providers>
+          <Providers>
+            <Header />
+            <Main>{children}</Main>
+            <Footer />
+          </Providers>
         </div>
       </body>
     </html>
