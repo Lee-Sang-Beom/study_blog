@@ -20,8 +20,6 @@ import {
   PagingNumberWrap,
   PagingPrevButton,
 } from "@/components/paging/Paging";
-import React from "react";
-
 const tags = [
   { tagName: "react", tagId: 1 },
   { tagName: "자바스크립트", tagId: 2 },
@@ -66,8 +64,7 @@ export default function Home() {
           </CardContent>
         </CardBody>
       </Card>
-      {/* 구분선 */}
-      <span style={{ height: "30px", width: "100%", display: "block" }}></span>
+
       <Paging>
         <PagingFirstButton />
         <PagingPrevButton />

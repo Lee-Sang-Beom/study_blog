@@ -102,4 +102,20 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; /* 말줄임 적용 */
+}
+
+*::-webkit-scrollbar {
+  width: 8px; /* 스크롤바 너비 */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--main-hover-accent);
+  border-radius: 4px; /* 슬라이더 모서리 둥글기 */
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main-line-contents-area-2);
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
 }/*# sourceMappingURL=globals.css.map */

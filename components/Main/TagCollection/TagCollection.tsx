@@ -35,7 +35,6 @@ const TagCollection = React.forwardRef<
     },
     {
       seq: 6,
-
       name: "tag6",
     },
     {
