@@ -21,7 +21,6 @@ import {
   PagingPrevButton,
 } from "@/components/paging/Paging";
 import React from "react";
-import { Tag2, TagItem } from "@/components/Tag2/Tag2";
 
 const tags = [
   { tagName: "react", tagId: 1 },

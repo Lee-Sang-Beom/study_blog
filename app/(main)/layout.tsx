@@ -1,7 +1,5 @@
-import "./globals.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Providers } from "./providers";
 import localFont from "next/font/local";
 import Header from "@/components/Header/Header";
 import {
@@ -11,7 +9,6 @@ import {
   CardTitle,
 } from "@/components/card/Card";
 import { CardHeader } from "@chakra-ui/card";
-import { Tag2, TagItem } from "@/components/Tag2/Tag2";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,22 +18,22 @@ export const metadata: Metadata = {
 const pretendard = localFont({
   src: [
     {
-      path: "../fonts/Pretendard/Pretendard-Light.woff2",
+      path: "../../fonts/Pretendard/Pretendard-Light.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../fonts/Pretendard/Pretendard-Regular.woff2",
+      path: "../../fonts/Pretendard/Pretendard-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../fonts/Pretendard/Pretendard-Medium.woff2",
+      path: "../../fonts/Pretendard/Pretendard-Medium.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../fonts/Pretendard/Pretendard-Bold.woff2",
+      path: "../../fonts/Pretendard/Pretendard-Bold.woff2",
       weight: "700",
       style: "normal",
     },
@@ -48,12 +45,12 @@ const pretendard = localFont({
 const Godo = localFont({
   src: [
     {
-      path: "../fonts/Godo/GodoM.ttf",
+      path: "../../fonts/Godo/GodoM.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "/../fonts/Godo/GodoB.ttf",
+      path: "../../fonts/Godo/GodoB.ttf",
       weight: "700",
       style: "normal",
     },
@@ -87,7 +84,7 @@ export default function RootLayout({
             >
               개발 블로그
             </h1>
-            <Providers>{children}</Providers>
+            {children}
           </section>
           <section
             className={"sticky w-[400px] gap-[20px] pr-[60px]"}
@@ -152,9 +149,9 @@ export default function RootLayout({
                 # 태그
               </h2>
               <div className={"pl-[30px]"}>
-                <Tag2>
-                  <TagItem name={"Tag name"} />
-                </Tag2>
+                {/*<Tag2>*/}
+                {/*  <TagItem name={"Tag name"} />*/}
+                {/*</Tag2>*/}
               </div>
             </div>
           </section>
