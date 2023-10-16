@@ -90,7 +90,7 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0); /* 구형 브라우저를 위해 사용 */
   -webkit-clip-path: polygon(0 0, 0 0, 0 0);
-  clip-path: polygon(0 0, 0 0, 0 0); /* inset(50%) 와 동일한 표현 */
+          clip-path: polygon(0 0, 0 0, 0 0); /* inset(50%) 와 동일한 표현 */
   border: 0;
 }
 
@@ -119,4 +119,4 @@
 
 *::-webkit-scrollbar-track {
   background-color: transparent;
-} /*# sourceMappingURL=globals.css.map */
+}/*# sourceMappingURL=globals.css.map */
