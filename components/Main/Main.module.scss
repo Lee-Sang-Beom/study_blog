@@ -38,7 +38,8 @@
       right: 0;
 
       width: 460px;
-      height: auto;
+      // height: auto;
+      height: calc(100vh - 70px);
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -52,7 +53,7 @@
       }
       .section_box_right_bottom {
         position: relative;
-        flex-basis: auto;
+        height: calc(100% - 350px);
       }
     }
   }
