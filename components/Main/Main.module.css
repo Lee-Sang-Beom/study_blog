@@ -1,6 +1,6 @@
 .main_section {
   width: 100%;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 120px);
 }
 .main_section .inner {
   width: 100%;
@@ -32,12 +32,12 @@
   top: 0;
   right: 0;
   width: 460px;
-  height: auto;
+  height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   border-left: 1px solid var(--main-line-contents-area-2);
-  gap: 20px;
+  gap: 5px;
   box-shadow: -2px 3px 4px rgba(71, 71, 71, 0.3);
 }
 .main_section .inner .section_box_right .section_box_right_top {
@@ -46,5 +46,5 @@
 }
 .main_section .inner .section_box_right .section_box_right_bottom {
   position: relative;
-  flex-basis: auto;
+  height: calc(100% - 350px);
 }/*# sourceMappingURL=Main.module.css.map */
