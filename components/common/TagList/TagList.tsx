@@ -18,7 +18,6 @@ TagList.displayName = "TagList";
 
 interface TagItemProps {
   className?: string;
-  key: string | number;
   name: string;
 }
 const TagItem = React.forwardRef<HTMLDivElement, TagItemProps>(
