@@ -19,13 +19,12 @@
     padding: 15px 0 15px 25px;
     width: calc(100% - 30px);
     height: calc(100% - 90px);
-    max-height: 450px;
 
     .tag_box,
     .scroll_tag_box {
       display: flex;
       height: auto;
-      max-height: 400px;
+      max-height: 100%;
       flex-direction: column;
       justify-content: flex-start;
       gap: 5px;

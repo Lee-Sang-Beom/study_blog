@@ -1,4 +1,4 @@
-import styles from "./Main.module.css";
+import styles from "./Main.module.scss";
 import RealTimePopularWriting from "./RealTimePopularWriting/RealTimePopularWriting";
 import TagCollection from "./TagCollection/TagCollection";
 export default function Main({ children }: any) {

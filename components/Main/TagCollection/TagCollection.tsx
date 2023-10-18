@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import styles from "./TagCollection.module.css";
+import styles from "./TagCollection.module.scss";
 
 import { useState } from "react";
 import { Button, Tag, transition } from "@chakra-ui/react";
