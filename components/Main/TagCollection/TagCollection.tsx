@@ -1,8 +1,9 @@
 "use client";
+import React from "react";
 import Link from "next/link";
 import styles from "./TagCollection.module.css";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Tag, transition } from "@chakra-ui/react";
 import { TagItem, TagList } from "@/components/common/TagList/TagList";
 
@@ -87,8 +88,9 @@ const TagCollection = React.forwardRef<
                   href="/"
                   style={{ display: "inline-block" }}
                   aria-label={tag.name}
+                  key={tag.seq}
                 >
-                  <TagItem key={tag.seq} name={tag.name} />
+                  <TagItem name={tag.name} />
                 </Link>
               );
             } else {
@@ -98,8 +100,9 @@ const TagCollection = React.forwardRef<
                     href="/"
                     style={{ display: "inline-block" }}
                     aria-label={tag.name}
+                    key={tag.seq}
                   >
-                    <TagItem key={tag.seq} name={tag.name} />
+                    <TagItem name={tag.name} />
                   </Link>
                 );
               }
@@ -118,5 +121,5 @@ const TagCollection = React.forwardRef<
     </div>
   );
 });
-
+TagCollection.displayName = "TagCollection";
 export default TagCollection;
