@@ -6,8 +6,10 @@ import { rejects } from "assert";
 export async function POST(request: Request) {
     const body = await request.json();
     const header = request.headers;
-    if (header.get("Authorization") !== "dfwoidkfjlkjdms")
-    return Response.json({status: 401});
+    if (header.get("Authorization") !== "dfwoidkfjlkjdms"){
+      return Response.json({status: 401});
+    }
+
 //@ts-ignore
 const {password, salt} = await createHashedPassword(body.pw);
 
@@ -19,15 +21,14 @@ const user = {
 };
 // @ts-ignore
 const res = await db.promise().query("INSERT INTO users SET ?", user);
-console.log(res);
 return Response.json({ status: 200 });
 
 }
 const createSalt = () =>
     new Promise((resolve, reject) => {
         crypto.randomBytes(64, (err, buf) => {
-            if (err) rejects(err);
-            
+            if (err) rejects(err as any);
+
             resolve(buf.toString("base64"));
         });
     });

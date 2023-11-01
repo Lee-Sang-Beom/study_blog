@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import Main from "@/components/Main/Main";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import AuthSessionProvider from "./AuthSessionProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -65,11 +66,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${Godo.variable} ${pretendard.variable}`}>
         <div id={"blog_wrap"}>
-          <Providers>
-            <Header />
-            <Main>{children}</Main>
-            <Footer />
-          </Providers>
+          <AuthSessionProvider>
+            <Providers>
+              <Header />
+              <Main>{children}</Main>
+              <Footer />
+            </Providers>
+          </AuthSessionProvider>
         </div>
       </body>
     </html>
