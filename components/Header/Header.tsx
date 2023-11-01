@@ -4,6 +4,7 @@ import Link from "next/link";
 import Avatar from "../common/Avatar/Avatar";
 import NavBar from "./NavBar/NavBar";
 import HeaderSearchForm from "./HeaderSearchForm/HeaderSearchForm";
+import HeaderSearchFormServer from "./HeaderSearchForm/HeaderSearchFormServer";
 
 const Header = React.forwardRef<
   HTMLDivElement,
@@ -72,7 +73,8 @@ const Header = React.forwardRef<
         <NavBar menuList={menuList} />
       </div>
       <div className={styles.header_right}>
-        <HeaderSearchForm />
+        {/* <HeaderSearchForm /> */}
+        <HeaderSearchFormServer />
       </div>
     </div>
   );

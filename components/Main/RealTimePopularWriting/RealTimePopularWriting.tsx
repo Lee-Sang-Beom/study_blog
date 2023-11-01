@@ -27,7 +27,7 @@ export default function RealTimePopularWriting() {
       <p className={styles.title}>실시간 인기글</p>
       <div className={styles.popluar_card_wrap}>
         {popluarProperty.map((property, index) => {
-          return <PopularWrtitingCard cardData={property} />;
+          return <PopularWrtitingCard cardData={property} key={index} />;
         })}
       </div>
     </div>

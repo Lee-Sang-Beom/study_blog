@@ -23,8 +23,7 @@ export async function POST(request:Request){
         })
     }
 
-    console.log("dpd",user_id, user_pw, salt, user_name )
-    return Response.json({status:200, data:{user_id: user_id, user_pw: user_name}})
+    return Response.json({status:200, data: {user_id: user_id, user_name: user_name}})
 }
 
 const createHashedPassword = (plainPw :string, salt: string) => {

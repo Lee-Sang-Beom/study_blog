@@ -13,10 +13,14 @@ import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton";
 import React from "react";
 import Input from "../../common/BasicInput/Input";
 import { useRef } from "react";
+import { signOut, useSession } from "next-auth/react";
+import { redirect } from "next/dist/server/api-utils";
+
 const HeaderSearchForm = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+  // React.HTMLAttributes<HTMLDivElement>
+  any
+>(({ className, session, ...props }, ref) => {
   // 검색어
   const [searchValue, setSearchValue] = useState<string>("");
 
@@ -27,7 +31,19 @@ const HeaderSearchForm = React.forwardRef<
   const toggleRef = useRef<any>(null);
 
   // 로그인 정보
-  const [isLogin, setIsLogin] = useState<boolean>(false);
+  const [isLogin, setIsLogin] = useState<boolean | undefined>(undefined);
+
+  useEffect(() => {
+    console.log("session is ", session);
+    if (session !== null && session !== undefined) {
+      console.log("1");
+      setIsLogin(true);
+    } else {
+      console.log("2");
+
+      setIsLogin(false);
+    }
+  }, [session]);
 
   return (
     <div
@@ -124,11 +140,10 @@ const HeaderSearchForm = React.forwardRef<
           title={isLogin ? "로그아웃 버튼" : "로그인 버튼"}
           onClick={() => {
             if (isLogin) {
-              // alert("로그아웃!");
+              signOut();
             } else {
               // alert("로그인!");
             }
-            setIsLogin((prev) => !prev);
           }}
         >
           {isLogin ? (

@@ -17,7 +17,7 @@ import React from "react";
 const DetailPage = () => {
   return (
     <>
-      <DetailB>
+      {/* <DetailB>
         <DetailBHeader>
           <DetailBHeaderTitle>
             사용법과 함께 작성해본 좌충우돌 AWS DMS 사용기 _feat.RDS 통합 이야기
@@ -132,7 +132,7 @@ const DetailPage = () => {
             </chakra.span>
           </HStack>
         </DetailBFooter>
-      </DetailB>
+      </DetailB> */}
     </>
   );
 };

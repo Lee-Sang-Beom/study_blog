@@ -1,4 +1,4 @@
-import { AuthOptions } from "next-auth";
+import { AuthOptions, User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import KakaoProvider from "next-auth/providers/kakao";
@@ -94,24 +94,26 @@ export const authOptions: AuthOptions = {
       }
       return true;
     },
-    redirect: async ({ url, baseUrl }) => {
-      if (url.startsWith("/")) {
-        console.log("startWith");
-        return `${baseUrl}${url}`;
-      } else if (new URL(url).origin === baseUrl) return url;
-      return baseUrl;
-    },
+    // redirect: async ({ url, baseUrl }) => {
+    //   if (url.startsWith("/")) {
+    //     console.log("startWith");
+    //     return `${baseUrl}${url}`;
+    //   } else if (new URL(url).origin === baseUrl) return url;
+    //   return baseUrl;
+    // },
     jwt: async ({ token, user }) => {
       if (user) {
-        token.userId = user.userId;
-        token.userName =user.userName;
+        token.user = user;
+        // token.userId = user.userId;
+        // token.userName =user.userName;
       }
       return token;
     },
     session: async ({ session, token, user }) => {
       if (token && session.user) {
-        session.user.userId = token.userId;
-        session.user.userName= token.userName;
+        session.user = token.user as User;
+        // session.user.userId = token.userId;
+        // session.user.userName= token.userName;
       }
       return session;
     },

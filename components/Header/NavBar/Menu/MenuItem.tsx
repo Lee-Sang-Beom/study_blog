@@ -3,11 +3,10 @@ import Link from "next/link";
 import styles from "./Menu.module.css";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { MenuProps } from "../../../../types/menu/Menu";
 import React from "react";
 
 interface ExtendLIProps extends React.HTMLAttributes<HTMLLIElement> {
-  menu: MenuProps;
+  menu: any;
 }
 
 const MenuItem = React.forwardRef(
