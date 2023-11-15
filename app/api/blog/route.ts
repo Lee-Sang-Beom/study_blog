@@ -24,7 +24,14 @@ export async function POST(request: Request){
     return Response.json({status: 200, data:res[0]})
 }
 
-export async function PUT(request: Request){
+export async function PATCH(request: Request){
+    const body= await request.json();
+
+    const query = "UPDATE blogs SET title = ?, content = ? WHERE id = ?";
+
+    //@ts-ignore
+    const res = await db.promise().query(query, [body.title, body.content, body.id])
+    return Response.json({status:200, data:{msg:"수정완료"}});
 }
 
 export async function DELETE(request: Request){
