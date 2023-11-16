@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import BlogUpdateClient from "./BlogUpdateClient";
 
 const blogSelectDetail = async (id: number) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/blog/${id}`, {
     method: "GET",
     cache: "no-store",
   });

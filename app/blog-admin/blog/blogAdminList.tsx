@@ -10,7 +10,7 @@ export default function BlogAdminList({}) {
   useEffect(() => {
     const fetchData = async () => {
       // 명시적 GET 요청
-      const data = await fetch("http://localhost:3000/api/blog", {
+      const data = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/blog`, {
         cache: "no-store",
         method: "GET",
       });

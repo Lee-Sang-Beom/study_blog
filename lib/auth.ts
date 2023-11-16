@@ -29,22 +29,18 @@ export const authOptions: AuthOptions = {
       },
       async authorize(credentials) {
         if (credentials) {
-          const resp = await fetch("http://localhost:3000/api/login",{
-            method:"POST",
-            body:JSON.stringify(credentials)
+          const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, {
+            method: "POST",
+            body: JSON.stringify(credentials),
           });
-        const resData = await resp.json();
-        if(resData.status === 200) {
-          console.log("hello");
-          console.log("res : ",resData.data)
-          return resData.data;
-        }
-        else{
-          return null;
-        }
+          const resJson = await res.json();
+          if (resJson.status === 200) {
+            return resJson.data;
+          } else {
+            throw new Error(JSON.stringify(resJson));
+          }
         } else {
-          console.log("check your credentials");
-          return null;
+          alert("plz check crediental");
         }
       },
     }),
@@ -77,7 +73,7 @@ export const authOptions: AuthOptions = {
           };
           const { data: loginData } = await axios.post(
             `${process.env.BACKEND_URL}/backapi/security/login/social`,
-            sendData,
+            sendData
           );
 
           console.log(loginData);

@@ -15,6 +15,7 @@ import Input from "../../common/BasicInput/Input";
 import { useRef } from "react";
 import { signOut, useSession } from "next-auth/react";
 import { redirect } from "next/dist/server/api-utils";
+import Link from "next/link";
 
 const HeaderSearchForm = React.forwardRef<
   HTMLDivElement,
@@ -34,13 +35,9 @@ const HeaderSearchForm = React.forwardRef<
   const [isLogin, setIsLogin] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
-    console.log("session is ", session);
-    if (session !== null && session !== undefined) {
-      console.log("1");
+    if (session && session.user) {
       setIsLogin(true);
     } else {
-      console.log("2");
-
       setIsLogin(false);
     }
   }, [session]);
@@ -154,7 +151,9 @@ const HeaderSearchForm = React.forwardRef<
           ) : (
             <div>
               <FiLogIn color="#1B95D6" size={24} role="img" />
-              <p>Login</p>
+              <Link href="/login">
+                <p>Login</p>
+              </Link>
             </div>
           )}
         </IconButton>
